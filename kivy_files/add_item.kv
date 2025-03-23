@@ -1,0 +1,56 @@
+<AddItemScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: "10dp"
+        padding: 0, 0, 0, 20
+        
+        MDTopAppBar:
+            title: "Add Item"
+            left_action_items :[["home", lambda x: root.go_back_to_home()]]
+            pos_hint: {"top": 1}
+            elevation: 10
+            md_bg_color: 0, 0.5, 0.5, 1
+            specific_text_color: 1, 1, 1, 1
+        
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: "20dp"
+            padding: "10dp"
+
+            MDRaisedButton:
+                text: "Scan Barcode"
+                icon: "barcode-scan"
+                pos_hint: {"center_x": 0.5}
+                on_release: root.go_to_scan_barcode()
+                md_bg_color: 0, 0.5, 0.5, 1
+
+            MDTextField:
+                id: item_name
+                hint_text: "Item Name"
+                helper_text: "Enter food item name"
+                helper_text_mode: "on_focus"
+            
+            MDTextField:
+                id: item_category
+                hint_text: "Category"
+                helper_text: "e.g. Dairy, Meat, Produce"
+                helper_text_mode: "on_focus"
+            
+            MDTextField:
+                id: item_quantity
+                hint_text: "Quantity"
+                helper_text: "Enter number"
+                helper_text_mode: "on_focus"
+                input_filter: "int"
+            
+            MDTextField:
+                id: item_expiration
+                hint_text: "Expiration Date (YYYY-MM-DD)"
+                helper_text: "Format: YYYY-MM-DD"
+                helper_text_mode: "on_focus"
+            
+            MDRaisedButton:
+                text: "Add Item"
+                pos_hint: {"center_x": 0.5}
+                on_release: root.add_item()
+                md_bg_color: 0, 0.5, 0.5, 1  # Match your app theme color

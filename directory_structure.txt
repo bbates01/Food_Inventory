@@ -1,0 +1,14 @@
+food_inventory_app/
+├── main.py          # Main application logic
+├── database.py      # SQLite database logic
+├── screens/
+│   ├── home_screen.py    # Home screen (inventory list)
+│   ├── add_item_screen.py # Add item screen
+│   ├── meal_suggestions.py # Meal suggestions screen
+├── assets/
+│   ├── icons/       # Icons for the app
+│   ├── images/      # Placeholder images
+└── kivy_files/
+    ├── home.kv      # Kivy layout for home screen
+    ├── add_item.kv  # Kivy layout for add item screen
+    ├── meals.kv     # Kivy layout for meal suggestions screen

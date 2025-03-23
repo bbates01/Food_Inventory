@@ -1,0 +1,24 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 0, 0, 0, 20  # Add padding at the bottom
+        
+        MDTopAppBar:
+            title: "Food Inventory"
+            right_action_items: [["plus", lambda x: root.go_to_add_item()]]
+            md_bg_color: 0, 0.5, 0.5, 1  # Custom background color (teal)
+            specific_text_color: 1, 1, 1, 1  # Custom text color (white)
+            elevation: 10  # Custom elevation for shadow effect
+        
+        ScrollView:
+            MDList:
+                id: food_list
+        
+        BoxLayout:
+            size_hint_y: None
+            height: "60dp"  # This creates space at the bottom
+        
+        MDFloatingActionButton:
+            icon: "lightbulb"
+            pos_hint: {"center_x": 0.5, "bottom": 0.15}
+            on_release: root.go_to_meal_suggestions()
